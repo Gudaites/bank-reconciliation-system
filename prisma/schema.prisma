@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TransactionType {
+  CREDIT
+  DEBIT
+}
+
+enum TransactionSource {
+  BANK
+  ACCOUNTING
+}
+
+enum TransactionStatus {
+  PENDING
+  MATCHED
+}
+
+model Transaction {
+  id              String            @id @default(uuid())
+  date            DateTime
+  description     String
+  amount          Float
+  type            TransactionType
+  source          TransactionSource
+  status          TransactionStatus @default(PENDING)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  matchedWith     Match?            @relation("MatchedWith")
+  matches         Match?            @relation("Matches")
+
+  @@index([date, amount, type, status])
+  @@index([source, status])
+}
+
+model Match {
+  id                  String      @id @default(uuid())
+  bankTransaction     Transaction  @relation("MatchedWith", fields: [bankTransactionId], references: [id])
+  bankTransactionId   String       @unique
+  accountingTransaction Transaction @relation("Matches", fields: [accountingTransactionId], references: [id])
+  accountingTransactionId String    @unique
+  createdAt           DateTime    @default(now())
+
+  @@index([bankTransactionId])
+  @@index([accountingTransactionId])
+}

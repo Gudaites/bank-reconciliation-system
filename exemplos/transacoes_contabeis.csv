@@ -1,0 +1,10 @@
+data,descricao,valor,tipo
+2025-03-27,Pagamento Fornecedor XYZ,1500.00,DEBIT
+2025-03-30,Recebimento Cliente ABC,2000.00,CREDIT
+2025-03-30,Taxa Bancária Mensal,45.50,DEBIT
+2025-03-31,Transferência para Conta Principal,3500.00,DEBIT
+2025-04-01,Fornecedor 123 Insumos,750.25,DEBIT
+2025-04-03,Cliente DEF Venda Mensal,1250.75,CREDIT
+2025-04-01,Recebimento Cliente GHI,3000.00,CREDIT
+2025-04-03,Serviço de Manutenção Predial,350.00,DEBIT
+2025-04-03,Despesa com Material de Escritório,127.80,DEBIT

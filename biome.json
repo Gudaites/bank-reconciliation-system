@@ -1,0 +1,77 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.1/schema.json",
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"lineWidth": 120,
+		"lineEnding": "lf"
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"enabled": true,
+			"semicolons": "always",
+			"lineEnding": "lf"
+		},
+		"linter": {
+			"enabled": true
+		},
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": true
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"complexity": {
+				"useFlatMap": "error",
+				"noEmptyTypeParameters": "error",
+				"noUselessEmptyExport": "error",
+				"noStaticOnlyClass": "error",
+				"noMultipleSpacesInRegularExpressionLiterals": "error",
+				"noForEach": "error",
+				"useArrowFunction": "error",
+				"useRegexLiterals": "error"
+			},
+			"recommended": false,
+			"correctness": {
+				"noUnknownFunction": "error",
+				"noUnusedVariables": {
+					"level": "error",
+					"fix": "safe"
+				},
+				"noUnusedImports": {
+					"level": "error",
+					"fix": "safe"
+				}
+			},
+			"performance": {
+				"noAccumulatingSpread": {
+					"level": "error"
+				}
+			},
+			"suspicious": {
+				"useAwait": "error",
+				"noSkippedTests": "error",
+				"noConsoleLog": "off",
+				"noImportAssign": "error"
+			},
+			"style": {
+				"noArguments": "error",
+				"noDefaultExport": "error",
+				"useConst": {
+					"level": "error",
+					"fix": "safe"
+				},
+				"useTemplate": {
+					"level": "warn",
+					"fix": "safe"
+				}
+			}
+		},
+		"ignore": ["**/.eslintrc.js", "./*.js", "**/node_modules", "**/dist", "**/output", "test/coverage"]
+	}
+}
