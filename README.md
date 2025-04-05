@@ -100,14 +100,14 @@ Os arquivos CSV devem seguir o seguinte formato:
 
 ### Transações Bancárias
 ```
-date,description,amount,type
+data,descricao,valor,tipo
 2023-01-15,Pagamento Fornecedor A,1000.50,DEBIT
 2023-01-20,Recebimento Cliente X,2000.75,CREDIT
 ```
 
 ### Transações Contábeis
 ```
-date,description,amount,type
+data,descricao,valor,tipo
 2023-01-14,Pagamento Fornecedor A (Contabilidade),1000.50,DEBIT
 2023-01-21,Recebimento Cliente X (Contabilidade),2000.75,CREDIT
 ```
